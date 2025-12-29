@@ -12,12 +12,26 @@ const badgeVariants = cva(
         secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
         destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
+        success: "border-transparent bg-success text-success-foreground",
+        warning: "border-transparent bg-warning text-warning-foreground",
+        critical: "border-transparent bg-critical text-critical-foreground",
+        // Priority badges for triage
+        "priority-critical": "border-transparent bg-critical text-critical-foreground animate-pulse",
+        "priority-medium": "border-transparent bg-warning text-warning-foreground",
+        "priority-normal": "border-transparent bg-success text-success-foreground",
+        // Status badges
+        scheduled: "border-transparent bg-primary/20 text-primary",
+        completed: "border-transparent bg-success/20 text-success",
+        cancelled: "border-transparent bg-muted text-muted-foreground",
+        pending: "border-transparent bg-warning/20 text-warning",
+        paid: "border-transparent bg-success/20 text-success",
+        overdue: "border-transparent bg-critical/20 text-critical",
       },
     },
     defaultVariants: {
       variant: "default",
     },
-  },
+  }
 );
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {}
